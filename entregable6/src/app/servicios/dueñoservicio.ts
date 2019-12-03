@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Dueño } from '../modelo/dueño';
 import { Observable } from 'rxjs';
-import { catchError, retry} from 'rxjs/operators';
+
 
 
 
@@ -18,16 +18,17 @@ export class DueñoServicio {
 
     loginDueño () {
         var due= new Dueño();
-        due.email='guille@guille.com';
-        due.password='1234';
-        console.log(JSON.stringify(due));
-        //return this.http.post<Boolean>(this.dueñoUrl, due);
+        due.email="guille@guille.com";
+        due.password="124";
+        let json = JSON.stringify(due);
+        let headers= new HttpHeaders().set('Content-Type','application/json')
+        return this.http.post<Boolean>(this.dueñoUrl,json,{headers:headers});
              
      }
 
-     obtenerTodosLosDueños():Observable<Dueño[]>{
+     obtenerTodosLosDueños(){
 
-         return this.http.get<Dueño[]>("http://localhost:1085/ttps-spring/duenio")
+         return this.http.get<Dueño[]>("http://localhost:1085/ttps-spring/duenio");
 
      }
 

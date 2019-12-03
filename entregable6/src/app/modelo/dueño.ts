@@ -1,11 +1,11 @@
 export class Dueño {
 
-	public _idDuenio: Number;
-	public _nombre: String;
-	public _apellido: String; 
-	public _telefono: String;
-	public _email: String;
-    public _password: String;
+	public idDuenio: Number;
+	public nombre: String;
+	public apellido: String; 
+	public telefono: String;
+	public email: String;
+    public password: String;
 
 
 
@@ -20,38 +20,44 @@ export class Dueño {
     public constructor(){
         
     }
-
-
-    public get nombre(): String {
-        return this._nombre;
+    public get getIdDuenio(): Number {
+        return this.idDuenio;
     }
-    public set nombre(value: String) {
-        this._nombre = value;
+    public set setIdDuenio(value: Number) {
+        this.idDuenio = value;
     }
 
-    public get apellido(): String {
-        return this._apellido;
+
+    public get getNombre(): String {
+        return this.nombre;
     }
-    public set apellido(value: String) {
-        this._apellido = value;
+    public set setNombre(value: String) {
+        this.nombre = value;
     }
-    public get telefono(): String {
-        return this._telefono;
+
+    public get getApellido(): String {
+        return this.apellido;
     }
-    public set telefono(value: String) {
-        this._telefono = value;
+    public set setApellido(value: String) {
+        this.apellido = value;
     }
-    public get email(): String {
-        return this._email;
+    public get getTelefono(): String {
+        return this.telefono;
     }
-    public set email(value: String) {
-        this._email = value;
+    public set setTelefono(value: String) {
+        this.telefono = value;
     }
-    public get password(): String {
-        return this._password;
+    public get getEmail(): String {
+        return this.email;
     }
-    public set password(value: String) {
-        this._password = value;
+    public set setEmail(value: String) {
+        this.email = value;
+    }
+    public get getPassword(): String {
+        return this.password;
+    }
+    public set setPassword(value: String) {
+        this.password = value;
     }
 	
 }
