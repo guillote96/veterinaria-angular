@@ -1,0 +1,39 @@
+<form [formGroup]="form" (ngSubmit)="agregarMascota(form.value)" >
+    Nombre:<br>
+    <input type="text" formControlName="nombre" name="nombre">
+    <br>
+
+    Fecha Nacimiento:<br>
+    <input type="date" formControlName="fecha_nac" name="fecha_nac">
+    <br>
+
+    Especie:<br>
+    <input type="text" formControlName="especie" name="especie">
+    <br>
+
+    Raza:<br>
+    <input type="text" formControlName="raza" name="raza">
+    <br>
+
+    Sexo:<br>
+    <input type="text" formControlName="sexo" name="sexo">
+    <br>
+
+    Color:<br>
+    <input type="text" formControlName="color" name="color">
+    <br>
+
+    Señas Particulares:<br>
+    <input type="text" formControlName="senias_part" name="senias_part">
+    <br>
+    
+   Veterinario:<br>
+    <select name="idVeterinario" formControlName="idVeterinario" size="3">
+        <option value=0 selected>Ninguno</option>
+        <option value=1 selected>Altuna</option>
+    </select>
+    <br>
+
+
+    <input type="submit" value="Submit">
+  </form> 

@@ -1,6 +1,6 @@
 export class Dueño {
 
-	public idDuenio: Number;
+	public idDuenio: number;
 	public nombre: String;
 	public apellido: String; 
 	public telefono: String;

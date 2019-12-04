@@ -5,16 +5,23 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DuenioComponent } from './duenio/duenio.component';
+import { MascotasComponent } from './mascotas/mascotas.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RegistrarmascotaComponent } from './registrarmascota/registrarmascota.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DuenioComponent
+    DuenioComponent,
+    MascotasComponent,
+    RegistrarmascotaComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

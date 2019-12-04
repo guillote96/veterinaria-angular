@@ -14,8 +14,8 @@ export class DuenioComponent implements OnInit {
    loginOk: Boolean;
 
    constructor(private dueñoServicio: DueñoServicio) { 
-     this.obtenerTodosLosDuenios();
-     this.login();
+     //this.obtenerTodosLosDuenios();
+     //this.login();
    }
 
 
