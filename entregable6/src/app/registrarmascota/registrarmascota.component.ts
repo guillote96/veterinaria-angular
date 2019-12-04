@@ -37,7 +37,8 @@ export class RegistrarmascotaComponent implements OnInit {
    mascota.senias_part=form.senias_part;
    mascota.idVeterinario=form.idVeterinario;
    mascota.idDuenio=1; // alta de mascota para determinado dueño hasta armar session 
-
+   
+   console.log(JSON.stringify(mascota));
    this.mascotaServicio.agregarMascota(mascota).subscribe(respuesta=>{console.log(respuesta)});
   }
 
