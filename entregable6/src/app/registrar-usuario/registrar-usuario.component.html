@@ -1,0 +1,44 @@
+<h1>Registrar Duenio</h1>
+<form [formGroup]="form" (ngSubmit)="registrarDuenio(form.value)" >
+  Email:<br>
+  <input type="email" formControlName="email" name="email">
+  <br>
+  Password:<br>
+  <input type="password" formControlName="password" name="password">
+  <br>
+  Nombre:<br>
+  <input type="text" formControlName="nombre" name="nombre">
+  <br>
+  Apellido<br>
+  <input type="text" formControlName="apellido" name="apellido">
+  <br>
+  Telefono:<br>
+  <input type="text" formControlName="telefono" name="telefono">
+  <br>
+  <input type="submit" value="Submit">
+</form> 
+<br>
+<br>
+<br>
+<h1>Registrar Veterinario</h1>
+<form [formGroup]="form" (ngSubmit)="registrarVeterinario(form.value)" >
+  Email:<br>
+  <input type="email" formControlName="email" name="email">
+  <br>
+  Password:<br>
+  <input type="password" formControlName="password" name="password">
+  <br>
+  Nombre:<br>
+  <input type="text" formControlName="nombre" name="nombre">
+  <br>
+  Apellido<br>
+  <input type="text" formControlName="apellido" name="apellido">
+  <br>
+  Telefono:<br>
+  <input type="text" formControlName="telefono" name="telefono">
+  <br>
+  Domicilio Clinica:<br>
+  <input type="text" formControlName="domicilio_clinica" name="domicilio_clinica">
+  <br>
+  <input type="submit" value="Submit">
+</form> 

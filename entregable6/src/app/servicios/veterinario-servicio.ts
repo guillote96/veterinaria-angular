@@ -45,4 +45,11 @@ export class VeterinarioServicio {
          localStorage.removeItem("user");
 
      }
+     agregarVeterinario(veterinario){
+        var url='http://localhost:1085/ttps-spring/registrar/veterinario'
+        let json = JSON.stringify(veterinario);
+        let headers= new HttpHeaders().set('Content-Type','application/json')
+        return this.http.post<Boolean>(url,json,{headers:headers});
+
+     }
 }

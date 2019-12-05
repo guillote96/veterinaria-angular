@@ -60,4 +60,12 @@ export class DueñoServicio {
 
      }
 
+     agregarDuenio(duenio){
+        var url='http://localhost:1085/ttps-spring/registrar/duenio'
+        let json = JSON.stringify(duenio);
+        let headers= new HttpHeaders().set('Content-Type','application/json')
+        return this.http.post<Boolean>(url,json,{headers:headers});
+
+     }
+
 }
