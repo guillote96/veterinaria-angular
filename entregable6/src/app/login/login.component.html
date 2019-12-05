@@ -1,4 +1,4 @@
-<h1>LOGIN DUENIOS</h1>
+<h1>LOGIN USUARIO</h1>
 <form [formGroup]="form" (ngSubmit)="login(form.value)" >
   Email:<br>
   <input type="email" formControlName="email" name="email">
@@ -6,7 +6,13 @@
   password:<br>
   <input type="password" formControlName="password" name="password">
   <br>
+
+  Tipo Usuario<br>
+  <select name="tipo" formControlName="tipo" size="3">
+      <option value="duenio" >Duenio</option>
+      <option value="veterinario" >Veterinario</option>
+  </select>
+  <br>
+
   <input type="submit" value="Submit">
 </form> 
-
-<app-mascotas></app-mascotas>

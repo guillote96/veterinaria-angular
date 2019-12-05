@@ -8,13 +8,15 @@ import { DuenioComponent } from './duenio/duenio.component';
 import { MascotasComponent } from './mascotas/mascotas.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegistrarmascotaComponent } from './registrarmascota/registrarmascota.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DuenioComponent,
     MascotasComponent,
-    RegistrarmascotaComponent
+    RegistrarmascotaComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

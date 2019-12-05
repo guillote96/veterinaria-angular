@@ -1,38 +1,30 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
-import { Dueño } from '../modelo/dueño';
-import { Observable } from 'rxjs';
 import { isNullOrUndefined } from 'util';
-
-
-
-
-
-
+import {Veterinario} from '../modelo/veterinario'
 @Injectable()
-export class DueñoServicio {
-
-    dueñoUrl="http://localhost:1085/ttps-spring/login/duenio";
+export class VeterinarioServicio {
 
     constructor(private http: HttpClient) { }
+     
+    veterinarioUrl="http://localhost:1085/ttps-spring/login/veterinario";
 
-
-    loginDueño (email, password) {
-        var due= new Dueño();
-        due.email=email;
-        due.password=password;
-        let json = JSON.stringify(due);
+    loginVeterinario (email, password) {
+        var vet= new Veterinario();
+        vet.email=email;
+        vet.password=password;
+        let json = JSON.stringify(vet);
         let headers= new HttpHeaders().set('Content-Type','application/json')
-        return this.http.post<Boolean>(this.dueñoUrl,json,{headers:headers});
+        return this.http.post<Boolean>(this.veterinarioUrl,json,{headers:headers});
              
      }
 
-     setDueño(unDueño){
-         let user= JSON.stringify(unDueño);
+     setVeterinario(unVeterinario){
+         let user= JSON.stringify(unVeterinario);
          localStorage.setItem("user",user);
      }
 
-     getDueño(){
+     getVeterinario(){
          let user= localStorage.getItem("user");
          if(isNullOrUndefined(user)){
              return user;
@@ -48,16 +40,9 @@ export class DueñoServicio {
          return localStorage.getItem("token");
      }
 
-     logoutDueño(){
+     logoutVeterinario(){
          localStorage.removeItem("token");
          localStorage.removeItem("user");
 
      }
-
-     obtenerTodosLosDueños(){
-
-         return this.http.get<Dueño[]>("http://localhost:1085/ttps-spring/duenio");
-
-     }
-
 }

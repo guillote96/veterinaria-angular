@@ -3,6 +3,9 @@ import { FormsModule, FormBuilder, FormGroup} from '@angular/forms';
 import { MascotaServicio } from '../servicios/mascota-servicio';
 import { Mascota } from '../modelo/mascota';
 
+
+
+
 @Component({
   selector: 'app-registrarmascota',
   providers: [MascotaServicio],
