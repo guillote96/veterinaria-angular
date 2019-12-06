@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Dueño } from '../modelo/dueño';
 import { Observable } from 'rxjs';
 import { isNullOrUndefined } from 'util';
+import { DuenioComponent } from '../duenio/duenio.component';
 
 
 
@@ -33,11 +34,14 @@ export class DueñoServicio {
      }
 
      getDueño(){
-         let user= localStorage.getItem("user");
+         var user= localStorage.getItem("user");
+
          if(isNullOrUndefined(user)){
-             return user;
-         }else{
              return null;
+         }else{
+             
+            return JSON.parse(user);
+             
          }
      }
 
