@@ -11,7 +11,27 @@
  <header><img src="./assets/imagenes/perros.png" width="100%" height="300"></header>
  <div id='main'>
     <article>
-        <h1> Home Principal</h1>	
+
+            <h1>Editar Duenio</h1>
+            <form [formGroup]="form" (ngSubmit)="editarDuenio(form.value)" >
+              Email:<br>
+              <input type="email" formControlName="email" [value]="duenio['email']" required>
+              <br>
+              Password:<br>
+              <input type="password" formControlName="password" name="password" [value]="duenio['password']"required> 
+              <br>
+              Nombre:<br>
+              <input type="text" formControlName="nombre" name="nombre" [value]="duenio['nombre']"required>
+              <br>
+              Apellido<br>
+              <input type="text" formControlName="apellido" name="apellido" [value]="duenio['apellido']"required>
+              <br>
+              Telefono:<br>
+              <input type="text" formControlName="telefono" name="telefono" [value]="duenio['telefono']"required>
+              <br>
+              <input type="submit" value="Submit">
+            </form> 
+        	
 
     </article>
     <nav>

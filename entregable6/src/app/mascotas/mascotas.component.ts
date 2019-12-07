@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DueñoServicio } from '../servicios/dueñoservicio';
 import { MascotaServicio } from '../servicios/mascota-servicio';
 import { Mascota } from '../modelo/mascota';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -16,7 +17,7 @@ export class MascotasComponent implements OnInit {
   public mascotas:Mascota[];
 
 
-constructor(private ds:DueñoServicio,private ms:MascotaServicio){}
+constructor(private router:Router,private ds:DueñoServicio,private ms:MascotaServicio){}
 
 ngOnInit(){
    this.duenio=this.ds.getDueño();
@@ -25,6 +26,11 @@ ngOnInit(){
 
 
 
+}
+
+logout(){
+  this.ds.logoutDueño();
+  this.router.navigate(['home'])
 }
 
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Dueño } from '../modelo/dueño';
 import { DueñoServicio } from '../servicios/dueñoservicio';
+import {Router} from '@angular/router';
 
 
 
@@ -18,7 +19,7 @@ export class DuenioComponent implements OnInit {
 
 
 
-  constructor(private ds:DueñoServicio){}
+  constructor(private router:Router,private ds:DueñoServicio){}
 
   ngOnInit(){
      this.duenio=this.ds.getDueño();
@@ -30,6 +31,11 @@ export class DuenioComponent implements OnInit {
 
   misMascotas(){
     console.log("MIs mascotas funciono!!")
+  }
+
+  logout(){
+    this.ds.logoutDueño();
+    this.router.navigate(['home'])
   }
 
 }

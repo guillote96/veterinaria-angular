@@ -53,7 +53,7 @@ export class DueñoServicio {
      }
 
      logoutDueño(){
-         localStorage.removeItem("token");
+         //localStorage.removeItem("token");
          localStorage.removeItem("user");
 
      }
@@ -69,6 +69,18 @@ export class DueñoServicio {
         let json = JSON.stringify(duenio);
         let headers= new HttpHeaders().set('Content-Type','application/json')
         return this.http.post<Boolean>(url,json,{headers:headers});
+
+     }
+
+     traerDuenio(id){
+        return this.http.get<Dueño>("http://localhost:1085/ttps-spring/duenio/"+id);
+     }
+
+     editarDuenio(duenio,id){
+        var url='http://localhost:1085/ttps-spring/editar/duenio/'
+        let json = JSON.stringify(duenio);
+        let headers= new HttpHeaders().set('Content-Type','application/json')
+        return this.http.put<Boolean>(url+id,json,{headers:headers});
 
      }
 

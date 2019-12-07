@@ -53,4 +53,9 @@ export class RegistrarmascotaComponent implements OnInit {
    this.mascotaServicio.agregarMascota(mascota).subscribe(respuesta=>{this.router.navigate(['mascotas'])});
   }
 
+  logout(){
+    this.ds.logoutDueño();
+    this.router.navigate(['home'])
+  }
+
 }

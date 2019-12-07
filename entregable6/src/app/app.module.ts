@@ -11,6 +11,8 @@ import { RegistrarmascotaComponent } from './registrarmascota/registrarmascota.c
 import { LoginComponent } from './login/login.component';
 import { RegistrarUsuarioComponent } from './registrar-usuario/registrar-usuario.component';
 import { HomeComponent } from './home/home.component';
+import { EditarDuenioComponent } from './editar-duenio/editar-duenio.component';
+import { EditarVeterinarioComponent } from './editar-veterinario/editar-veterinario.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { HomeComponent } from './home/home.component';
     RegistrarmascotaComponent,
     LoginComponent,
     RegistrarUsuarioComponent,
-    HomeComponent
+    HomeComponent,
+    EditarDuenioComponent,
+    EditarVeterinarioComponent
   ],
   imports: [
     BrowserModule,

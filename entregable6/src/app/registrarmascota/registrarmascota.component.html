@@ -63,12 +63,12 @@
     <br>
 		<button [routerLink]="['/registrarmascota']" style=" width: 150px;" class="btn btn-warning">Alta Mascota</button>
 		<br>
-		<button type="button" style=" width: 150px;" class="btn btn-warning">Editar Perfil</button>
+		<button [routerLink]="['/editarduenio']" style=" width: 150px;" class="btn btn-warning">Editar Perfil</button>
     
     </nav>
 
     <aside>
-      <a href="#primero" style="color:white;">{{ nombre }}- Cerrar Sesion</a>
+      <a (click)="logout()" style="color:white;">{{ nombre }}- Cerrar Sesion</a>
      
     </aside>
 
