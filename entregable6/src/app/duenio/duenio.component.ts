@@ -28,4 +28,8 @@ export class DuenioComponent implements OnInit {
 
   }
 
+  misMascotas(){
+    console.log("MIs mascotas funciono!!")
+  }
+
 }

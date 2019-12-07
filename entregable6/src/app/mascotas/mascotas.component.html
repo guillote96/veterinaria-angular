@@ -1,1 +1,71 @@
-<p>JAJAJ FUNKO</p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+
+  </head>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style>
+    p{
+      font-size:12px;
+    }
+  </style>
+  <body>
+
+    
+	    
+ <header><img src="./assets/imagenes/perros.png" width="100%" height="300"></header>
+
+ <div id='main'>
+   
+    <article>
+        <h1>Mis Mascotas</h1>
+         <div *ngFor="let e of mascotas" >
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row no-gutters">
+                  <div class="col-md-4">
+                    <img src="../assets/imagenes/perroPerfil.png" class="card-img" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title" style="font-size:23px">{{e.nombre}}</h5>
+                      <p class="card-text">Especie:{{e.especie}}</p>
+                      <p class="card-text">Sexo:{{e.sexo}}</p>
+                      <p class="card-text">Color:{{e.color}}</p>
+                      <p class="card-text">Raza:{{e.raza}}</p>
+                      <p class="card-text">Señas Particulares:{{e.senias_part}}</p>
+                      <p class="card-text"> Fecha Nacimiento:{{e.fecha_nac | date}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+          </div>
+
+		
+		
+    </article>
+    <nav>
+      <br>
+    <button [routerLink]="['/duenio']" type="button" style="width: 150px;" class="btn btn-warning">Volver Home</button>
+		<br>
+    <button [routerLink]="['/mascotas']" type="button" style="width: 150px;" class="btn btn-warning">Mis Mascotas</button>
+    <br>
+		<button [routerLink]="['/registrarmascota']" type="button" style=" width: 150px;" class="btn btn-warning">Alta Mascota</button>
+		<br>
+		<button type="button" style=" width: 150px;" class="btn btn-warning">Editar Perfil</button>
+    
+    </nav>
+
+    <aside>
+      <a href="#primero" style="color:white;">{{ nombre }}- Cerrar Sesion</a>
+     
+    </aside>
+
+ </div>
+ 
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

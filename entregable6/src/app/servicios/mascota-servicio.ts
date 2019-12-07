@@ -15,8 +15,8 @@ export class MascotaServicio {
 
     }
 
-    listadoMascotaDeDuenio(){
+    listadoMascotaDeDuenio(idDuenio){
         var mascotaDeDuenioUrl='http://localhost:1085/ttps-spring/mascotas/duenio/';
-        return this.http.get<Mascota[]>(mascotaDeDuenioUrl+1);
+        return this.http.get<Mascota[]>(mascotaDeDuenioUrl+idDuenio);
     }
 }

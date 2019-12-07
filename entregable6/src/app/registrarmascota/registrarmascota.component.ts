@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule, FormBuilder, FormGroup} from '@angular/forms';
 import { MascotaServicio } from '../servicios/mascota-servicio';
+import { DueñoServicio } from '../servicios/dueñoservicio';
 import { Mascota } from '../modelo/mascota';
 
 
@@ -8,13 +9,16 @@ import { Mascota } from '../modelo/mascota';
 
 @Component({
   selector: 'app-registrarmascota',
-  providers: [MascotaServicio],
+  providers: [MascotaServicio,DueñoServicio],
   templateUrl: './registrarmascota.component.html',
   styleUrls: ['./registrarmascota.component.css']
 })
 export class RegistrarmascotaComponent implements OnInit {
   form: FormGroup;
-  constructor(private fb: FormBuilder,private mascotaServicio: MascotaServicio) { }
+  duenio:String;   
+  public nombre: String;
+  public mascotas:Mascota[];
+  constructor(private fb: FormBuilder,private mascotaServicio: MascotaServicio,private ds:DueñoServicio) { }
 
   ngOnInit() {
    this.form= this.fb.group({ 
@@ -27,6 +31,8 @@ export class RegistrarmascotaComponent implements OnInit {
      senias_part:'',
      idVeterinario:''
    })
+   this.duenio=this.ds.getDueño();
+   this.nombre=this.duenio["nombre"];
  }
 
  agregarMascota(form){
@@ -39,7 +45,7 @@ export class RegistrarmascotaComponent implements OnInit {
    mascota.color=form.color;
    mascota.senias_part=form.senias_part;
    mascota.idVeterinario=form.idVeterinario;
-   mascota.idDuenio=1; // alta de mascota para determinado dueño hasta armar session 
+   mascota.idDuenio=this.duenio["idDuenio"]; // alta de mascota para determinado dueño hasta armar session 
    
    console.log(JSON.stringify(mascota));
    this.mascotaServicio.agregarMascota(mascota).subscribe(respuesta=>{console.log(respuesta)});
