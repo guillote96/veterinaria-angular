@@ -12,7 +12,7 @@
  <div id='main'>
     <article>
 
-
+        <h1>Alta Mascota</h1>
 
 <form [formGroup]="form" (ngSubmit)="agregarMascota(form.value)" >
         Nombre:<br>
@@ -45,11 +45,11 @@
         
        Veterinario:<br>
         <select name="idVeterinario" formControlName="idVeterinario">
-            <option value=0 >Ninguno</option>
+            <option value=0>Ninguno</option>
             <option value=1 >Altuna</option>
         </select>
         <br>
-    
+        <br>
     
         <input type="submit" value="Submit">
       </form> 

@@ -3,6 +3,8 @@ import { FormsModule, FormBuilder, FormGroup} from '@angular/forms';
 import { MascotaServicio } from '../servicios/mascota-servicio';
 import { DueñoServicio } from '../servicios/dueñoservicio';
 import { Mascota } from '../modelo/mascota';
+import {Router} from '@angular/router';
+import { delay } from 'q';
 
 
 
@@ -18,7 +20,7 @@ export class RegistrarmascotaComponent implements OnInit {
   duenio:String;   
   public nombre: String;
   public mascotas:Mascota[];
-  constructor(private fb: FormBuilder,private mascotaServicio: MascotaServicio,private ds:DueñoServicio) { }
+  constructor(private router:Router,private fb: FormBuilder,private mascotaServicio: MascotaServicio,private ds:DueñoServicio) { }
 
   ngOnInit() {
    this.form= this.fb.group({ 
@@ -48,7 +50,7 @@ export class RegistrarmascotaComponent implements OnInit {
    mascota.idDuenio=this.duenio["idDuenio"]; // alta de mascota para determinado dueño hasta armar session 
    
    console.log(JSON.stringify(mascota));
-   this.mascotaServicio.agregarMascota(mascota).subscribe(respuesta=>{console.log(respuesta)});
+   this.mascotaServicio.agregarMascota(mascota).subscribe(respuesta=>{this.router.navigate(['mascotas'])});
   }
 
 }
