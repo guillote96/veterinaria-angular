@@ -1,4 +1,7 @@
-
+*{
+        text-align: center;
+    }
+    
 body {
     font: 24px Helvetica;
    

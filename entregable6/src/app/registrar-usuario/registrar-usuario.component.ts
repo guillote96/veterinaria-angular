@@ -19,6 +19,7 @@ export class RegistrarUsuarioComponent implements OnInit {
   ngOnInit() {
    this.form= this.fb.group({ 
      email:'',
+     email2:'',
      password:'',
      nombre:'',
      apellido:'',
@@ -40,7 +41,7 @@ export class RegistrarUsuarioComponent implements OnInit {
   var veterinario = new Veterinario();
   veterinario.nombre=form.nombre;
   veterinario.apellido=form.apellido;
-  veterinario.email=form.email;
+  veterinario.email=form.email2;
   veterinario.password=form.password;
   veterinario.telefono=form.telefono;
   veterinario.domicilio_clinica=form.domicilio_clinica;

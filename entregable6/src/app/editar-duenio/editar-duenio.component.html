@@ -4,7 +4,10 @@
 
 
   </head>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      
 
   <body>
 	    
@@ -12,7 +15,8 @@
  <div id='main'>
     <article>
 
-            <h1>Editar Duenio</h1>
+        <div class="panel panel-danger"  style="max-width: 540px;margin-left:18%">
+            <div class="panel-heading">Editar Duenio</div>
             <form [formGroup]="form" (ngSubmit)="editarDuenio(form.value)" >
               Email:<br>
               <input type="email" formControlName="email" [value]="duenio['email']" required>
@@ -29,8 +33,12 @@
               Telefono:<br>
               <input type="text" formControlName="telefono" name="telefono" [value]="duenio['telefono']"required>
               <br>
-              <input type="submit" value="Submit">
+              <br>
+              <button type="submit" class="btn btn-danger">Editar</button>
+              <br>
             </form> 
+            <br>
+          </div>   
         	
 
     </article>

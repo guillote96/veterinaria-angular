@@ -4,18 +4,33 @@
 
 
   </head>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-  <body>
+
+      <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-route.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-animate.js"></script>
+
+ 
+ <body>
 	    
  <header><img src="./assets/imagenes/perros.png" width="100%" height="300"></header>
  <div id='main'>
     <article>
-      <h1> Home Principal</h1>		
-		
+        <div id="mainApp">
+            
+        </div>
     </article>
     <nav>
-		
+      <br>
+      <button [routerLink]="['/home']" type="button" style="width: 150px;" class="btn btn-warning">Volver Home</button>
+      <br>
+      <br>
+      <button [routerLink]="['/registrarusuario']" type="button" style=" width: 150px;" class="btn btn-warning">Registrar Usuario</button>
+
     </nav>
 
     <aside>
@@ -25,10 +40,15 @@
     </aside>
 
  </div>
+
+
  
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  </body>
+
+    
+
+</body>
 </html>
 

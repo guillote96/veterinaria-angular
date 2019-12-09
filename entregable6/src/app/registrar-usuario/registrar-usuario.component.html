@@ -1,4 +1,29 @@
-<h1>Registrar Duenio</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+
+  </head>
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-route.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-animate.js"></script>
+
+ 
+ <body>
+	    
+ <header><img src="./assets/imagenes/perros.png" width="100%" height="300"></header>
+ <div id='main'>
+  
+<article>
+<div class="container-fluid">
+  
+<div class="row">  
+<div class="col-lg-6" >
+<div class="panel panel-primary" style="width:75%;margin-left:15%">
+<div class="panel-heading">Registrar Dueño</div>
 <form [formGroup]="form" (ngSubmit)="registrarDuenio(form.value)" >
   Email:<br>
   <input type="email" formControlName="email" name="email">
@@ -15,15 +40,20 @@
   Telefono:<br>
   <input type="text" formControlName="telefono" name="telefono">
   <br>
-  <input type="submit" value="Submit">
+  <br>
+  <button type="submit" value="Submit" class="btn btn-primary">Registrar</button>
 </form> 
 <br>
-<br>
-<br>
-<h1>Registrar Veterinario</h1>
+</div>
+</div>
+
+<div class="col-lg-6">
+<div class="panel panel-primary" style="margin-left:10%;width:75%;">
+<div class="panel-heading">Registrar Veterinario</div>
+
 <form [formGroup]="form" (ngSubmit)="registrarVeterinario(form.value)" >
   Email:<br>
-  <input type="email" formControlName="email" name="email">
+  <input type="email" formControlName="email2" name="email">
   <br>
   Password:<br>
   <input type="password" formControlName="password" name="password">
@@ -40,5 +70,43 @@
   Domicilio Clinica:<br>
   <input type="text" formControlName="domicilio_clinica" name="domicilio_clinica">
   <br>
-  <input type="submit" value="Submit">
+  <br>
+  <button type="submit" value="Submit" class="btn btn-primary">Registrar</button>
 </form> 
+<br>
+</div>
+</div>
+</div>
+</div>
+
+</article>
+    <nav>
+      <br>
+      <button [routerLink]="['/home']" type="button" style="width: 150px;" class="btn btn-warning">Volver Home</button>
+      <br>
+      <br>
+      <button [routerLink]="['/registrarusuario']" type="button" style=" width: 150px;" class="btn btn-warning">Registrar Usuario</button>
+
+    </nav>
+
+    <aside>
+      
+      <app-login></app-login>
+     
+    </aside>
+
+ </div>
+
+
+ 
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    
+
+</body>
+</html>
+
+
+
