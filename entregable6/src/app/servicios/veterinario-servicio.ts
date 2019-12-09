@@ -23,15 +23,17 @@ export class VeterinarioServicio {
          let user= JSON.stringify(unVeterinario);
          localStorage.setItem("user",user);
      }
-
      getVeterinario(){
-         let user= localStorage.getItem("user");
-         if(isNullOrUndefined(user)){
-             return user;
-         }else{
-             return null;
-         }
-     }
+        var user= localStorage.getItem("user");
+
+        if(isNullOrUndefined(user)){
+            return null;
+        }else{
+            
+           return JSON.parse(user);
+            
+        }
+    }
 
      setToken(token){
         localStorage.setItem("token",token);
@@ -50,6 +52,13 @@ export class VeterinarioServicio {
         let json = JSON.stringify(veterinario);
         let headers= new HttpHeaders().set('Content-Type','application/json')
         return this.http.post<Boolean>(url,json,{headers:headers});
+
+     }
+     editarVeterinario(veterinario,id){
+        var url='http://localhost:1085/ttps-spring/editar/veterinario/'
+        let json = JSON.stringify(veterinario);
+        let headers= new HttpHeaders().set('Content-Type','application/json')
+        return this.http.put<Boolean>(url+id,json,{headers:headers});
 
      }
 }

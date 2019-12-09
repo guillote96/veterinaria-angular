@@ -7,12 +7,16 @@ import { HomeComponent } from './home/home.component';
 import { DuenioComponent } from './duenio/duenio.component';
 import { MascotasComponent } from './mascotas/mascotas.component';
 import {EditarDuenioComponent} from './editar-duenio/editar-duenio.component';
+import { VeterinarioComponent } from './veterinario/veterinario.component';
+import { EditarVeterinarioComponent } from './editar-veterinario/editar-veterinario.component';
 
 
 const routes: Routes = [{ path: 'home', component: HomeComponent },
                         { path: 'duenio', component: DuenioComponent },
+                        { path: 'veterinario', component: VeterinarioComponent },
                         { path: 'registrarmascota', component: RegistrarmascotaComponent },
                         { path: 'editarduenio', component: EditarDuenioComponent},
+                        { path: 'editarveterinario', component: EditarVeterinarioComponent},
                         { path: 'mascotas', component: MascotasComponent },
                         { path: 'login', component: LoginComponent },
                         { path: 'registrarusuario', component: RegistrarUsuarioComponent }];

@@ -13,6 +13,7 @@ import { RegistrarUsuarioComponent } from './registrar-usuario/registrar-usuario
 import { HomeComponent } from './home/home.component';
 import { EditarDuenioComponent } from './editar-duenio/editar-duenio.component';
 import { EditarVeterinarioComponent } from './editar-veterinario/editar-veterinario.component';
+import { VeterinarioComponent } from './veterinario/veterinario.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { EditarVeterinarioComponent } from './editar-veterinario/editar-veterina
     RegistrarUsuarioComponent,
     HomeComponent,
     EditarDuenioComponent,
-    EditarVeterinarioComponent
+    EditarVeterinarioComponent,
+    VeterinarioComponent
   ],
   imports: [
     BrowserModule,

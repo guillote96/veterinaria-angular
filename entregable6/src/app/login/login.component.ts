@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
        this.dueñoServicio.loginDueño(form.email,form.password).subscribe(resultado=> {this.dueñoServicio.setDueño(resultado);this.router.navigate(['duenio']);}
         , error => {console.error()});
     } else{
-      this.veterinarioServicio.loginVeterinario(form.email,form.password).subscribe(resultado=> {this.veterinarioServicio.setVeterinario(resultado)}
+      this.veterinarioServicio.loginVeterinario(form.email,form.password).subscribe(resultado=> {this.veterinarioServicio.setVeterinario(resultado);this.router.navigate(['veterinario']);}
       , error => {console.error()});
     }
  }
