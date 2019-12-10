@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Mascota } from '../modelo/mascota';
-@Injectable()
+@Injectable(  {providedIn: 'root'})
 export class MascotaServicio {
 
     constructor(private http: HttpClient) { }

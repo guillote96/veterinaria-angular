@@ -14,6 +14,8 @@ import { HomeComponent } from './home/home.component';
 import { EditarDuenioComponent } from './editar-duenio/editar-duenio.component';
 import { EditarVeterinarioComponent } from './editar-veterinario/editar-veterinario.component';
 import { VeterinarioComponent } from './veterinario/veterinario.component';
+import { AuthduenioGuard } from './auth/authduenio.guard';
+
 
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ import { VeterinarioComponent } from './veterinario/veterinario.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent],

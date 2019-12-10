@@ -10,7 +10,7 @@ import { DuenioComponent } from '../duenio/duenio.component';
 
 
 
-@Injectable()
+@Injectable( {providedIn: 'root'})
 export class DueñoServicio {
 
     dueñoUrl="http://localhost:1085/ttps-spring/login/duenio";
@@ -30,11 +30,11 @@ export class DueñoServicio {
 
      setDueño(unDueño){
          let user= JSON.stringify(unDueño);
-         localStorage.setItem("user",user);
+         localStorage.setItem("duenio",user);
      }
 
      getDueño(){
-         var user= localStorage.getItem("user");
+         var user= localStorage.getItem("duenio");
 
          if(isNullOrUndefined(user)){
              return null;
@@ -54,7 +54,7 @@ export class DueñoServicio {
 
      logoutDueño(){
          //localStorage.removeItem("token");
-         localStorage.removeItem("user");
+         localStorage.removeItem("duenio");
 
      }
 

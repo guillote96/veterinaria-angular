@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { isNullOrUndefined } from 'util';
 import {Veterinario} from '../modelo/veterinario'
-@Injectable()
+@Injectable( {providedIn: 'root'})
 export class VeterinarioServicio {
 
     constructor(private http: HttpClient) { }
@@ -21,10 +21,10 @@ export class VeterinarioServicio {
 
      setVeterinario(unVeterinario){
          let user= JSON.stringify(unVeterinario);
-         localStorage.setItem("user",user);
+         localStorage.setItem("veterinario",user);
      }
      getVeterinario(){
-        var user= localStorage.getItem("user");
+        var user= localStorage.getItem("veterinario");
 
         if(isNullOrUndefined(user)){
             return null;
@@ -44,7 +44,7 @@ export class VeterinarioServicio {
 
      logoutVeterinario(){
          localStorage.removeItem("token");
-         localStorage.removeItem("user");
+         localStorage.removeItem("veterinario");
 
      }
      agregarVeterinario(veterinario){

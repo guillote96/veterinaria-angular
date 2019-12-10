@@ -9,15 +9,19 @@ import { MascotasComponent } from './mascotas/mascotas.component';
 import {EditarDuenioComponent} from './editar-duenio/editar-duenio.component';
 import { VeterinarioComponent } from './veterinario/veterinario.component';
 import { EditarVeterinarioComponent } from './editar-veterinario/editar-veterinario.component';
+import { AuthduenioGuard } from './auth/authduenio.guard';
+import { AuthveterinarioGuard } from './auth/authveterinario.guard';
 
 
-const routes: Routes = [{ path: 'home', component: HomeComponent },
-                        { path: 'duenio', component: DuenioComponent },
-                        { path: 'veterinario', component: VeterinarioComponent },
-                        { path: 'registrarmascota', component: RegistrarmascotaComponent },
-                        { path: 'editarduenio', component: EditarDuenioComponent},
-                        { path: 'editarveterinario', component: EditarVeterinarioComponent},
-                        { path: 'mascotas', component: MascotasComponent },
+
+const routes: Routes = [{ path: '', component: HomeComponent },
+                        { path: 'home', component: HomeComponent },
+                        { path: 'duenio', component: DuenioComponent, canActivate:[AuthduenioGuard] },
+                        { path: 'veterinario', component: VeterinarioComponent,canActivate:[AuthveterinarioGuard] },
+                        { path: 'registrarmascota', component: RegistrarmascotaComponent,canActivate:[AuthduenioGuard]},
+                        { path: 'editarduenio', component: EditarDuenioComponent , canActivate:[AuthduenioGuard] },
+                        { path: 'editarveterinario', component: EditarVeterinarioComponent,canActivate:[AuthveterinarioGuard]},
+                        { path: 'mascotas', component: MascotasComponent ,canActivate:[AuthduenioGuard] },
                         { path: 'login', component: LoginComponent },
                         { path: 'registrarusuario', component: RegistrarUsuarioComponent }];
   
