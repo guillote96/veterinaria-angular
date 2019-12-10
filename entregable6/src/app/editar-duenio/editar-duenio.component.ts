@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DueñoServicio } from '../servicios/dueñoservicio';
-import { FormsModule, FormBuilder, FormGroup} from '@angular/forms';
+import { FormsModule, FormBuilder, FormGroup,FormControl,Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import { Dueño } from '../modelo/dueño';
 
@@ -15,6 +15,7 @@ export class EditarDuenioComponent implements OnInit {
   form: FormGroup;
   duenio:String;   
   public nombre: String;
+  vacio:Boolean=false;
 
   constructor(private router:Router,private fb: FormBuilder,private ds:DueñoServicio
     ) { }
@@ -22,11 +23,11 @@ export class EditarDuenioComponent implements OnInit {
   ngOnInit() {
     this.duenio=this.ds.getDueño();
     this.form=this.fb.group({ 
-      email:this.duenio["email"],
-      password:this.duenio["password"],
-      nombre:this.duenio["nombre"],
-      apellido:this.duenio["apellido"],
-      telefono:this.duenio["telefono"]
+      email:new FormControl(this.duenio["email"], Validators.required),
+      password:new FormControl(this.duenio["password"], Validators.required),
+      nombre:new FormControl(this.duenio["nombre"], Validators.required),
+      apellido:new FormControl(this.duenio["apellido"], Validators.required),
+      telefono:new FormControl(this.duenio["telefono"], Validators.required)
     })
     
     this.nombre=this.duenio["nombre"];
@@ -38,6 +39,10 @@ export class EditarDuenioComponent implements OnInit {
   }
 
   editarDuenio(form){
+    if (this.form.invalid){
+      this.vacio=true;
+      return false;
+    }
     var d = new Dueño();
     d.nombre=form.nombre;
     d.apellido=form.apellido;

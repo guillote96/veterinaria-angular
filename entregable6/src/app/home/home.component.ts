@@ -13,7 +13,6 @@ import { LoginComponent } from '../login/login.component';
 })
 export class HomeComponent implements OnInit {
   
-  
 
   constructor() { }
 

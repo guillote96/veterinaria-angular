@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormsModule, FormBuilder, FormGroup} from '@angular/forms';
+import { FormsModule, FormBuilder, FormGroup,FormControl,Validators} from '@angular/forms';
 import { MascotaServicio } from '../servicios/mascota-servicio';
 import { DueñoServicio } from '../servicios/dueñoservicio';
 import { Mascota } from '../modelo/mascota';
@@ -20,24 +20,29 @@ export class RegistrarmascotaComponent implements OnInit {
   duenio:String;   
   public nombre: String;
   public mascotas:Mascota[];
+  vacio:Boolean=false;
   constructor(private router:Router,private fb: FormBuilder,private mascotaServicio: MascotaServicio,private ds:DueñoServicio) { }
 
   ngOnInit() {
    this.form= this.fb.group({ 
-     nombre:'',
-     fecha_nac:'',
-     especie:'',
-     raza:'',
-     sexo:'',
-     color:'',
-     senias_part:'',
-     idVeterinario:''
+     nombre:new FormControl('', Validators.required),
+     fecha_nac:new FormControl('', Validators.required),
+     especie:new FormControl('', Validators.required),
+     raza:new FormControl('', Validators.required),
+     sexo:new FormControl('', Validators.required),
+     color:new FormControl('', Validators.required),
+     senias_part:new FormControl('', Validators.required),
+     idVeterinario:new FormControl('', Validators.required)
    })
    this.duenio=this.ds.getDueño();
    this.nombre=this.duenio["nombre"];
  }
 
  agregarMascota(form){
+  if (this.form.invalid){
+    this.vacio=true;
+    return false;
+  }
    var mascota= new Mascota();
    mascota.nombre=form.nombre;
    mascota.fecha_nac=form.fecha_nac;
