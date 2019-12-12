@@ -34,10 +34,10 @@ export class LoginComponent implements OnInit {
     return false;
   }
    if(form.tipo == 'duenio'){
-       this.dueñoServicio.loginDueño(form.email,form.password).subscribe(resultado=> {this.condicion=false;this.dueñoServicio.setDueño(resultado);this.dueñoServicio.setToken('1234');this.router.navigate(['duenio']);}
+       this.dueñoServicio.loginDueño(form.email,form.password).subscribe(resultado=> {this.condicion=false;this.dueñoServicio.setDueño(resultado["usuario"]);this.dueñoServicio.setToken(resultado["token"]);this.router.navigate(['duenio']);}
         , error => {this.condicion=true});
     } else{
-      this.veterinarioServicio.loginVeterinario(form.email,form.password).subscribe(resultado=> {this.condicion=false;this.veterinarioServicio.setVeterinario(resultado);this.dueñoServicio.setToken('1234');this.router.navigate(['veterinario']);}
+      this.veterinarioServicio.loginVeterinario(form.email,form.password).subscribe(resultado=> {this.condicion=false;this.veterinarioServicio.setVeterinario(resultado["usuario"]);this.dueñoServicio.setToken(resultado["token"]);this.router.navigate(['veterinario']);}
       , error => {this.condicion=true});
     }
  }

@@ -23,7 +23,7 @@ export class DueñoServicio {
         due.email=email;
         due.password=password;
         let json = JSON.stringify(due);
-        let headers= new HttpHeaders().set('Content-Type','application/json');
+        let headers= new HttpHeaders().set('Content-Type','application/json')
         return this.http.post<Boolean>(this.dueñoUrl,json,{headers:headers});
              
      }
@@ -80,7 +80,6 @@ export class DueñoServicio {
         var url='http://localhost:1085/ttps-spring/editar/duenio/'
         let json = JSON.stringify(duenio);
         let headers= new HttpHeaders().set('Content-Type','application/json').set('token',this.getToke());
-        console.log(headers);
         return this.http.put<Boolean>(url+id,json,{headers:headers});
 
      }

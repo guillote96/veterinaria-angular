@@ -29,7 +29,6 @@ export class EditarVeterinarioComponent implements OnInit {
       telefono:new FormControl(this.veterinario["telefono"], Validators.required),
       domicilio_clinica:new FormControl(this.veterinario["domicilio_clinica"], Validators.required)
     })
-    console.log(this.veterinario);
     
     this.nombre=this.veterinario["nombre"];
   }
