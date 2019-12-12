@@ -21,6 +21,13 @@
              Hay Campos vacios
             </div>
 
+            <div *ngIf="existe" class="alert alert-danger alert-dismissible" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+               El email ingresado ya existe!!!
+              </div>
+
         <div class="panel panel-danger"  style="max-width: 540px;margin-left:18%">
             <div class="panel-heading">Editar Duenio</div>
             <form [formGroup]="form" (ngSubmit)="editarDuenio(form.value)" >

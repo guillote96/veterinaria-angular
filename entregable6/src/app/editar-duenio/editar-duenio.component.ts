@@ -16,6 +16,7 @@ export class EditarDuenioComponent implements OnInit {
   duenio:String;   
   public nombre: String;
   vacio:Boolean=false;
+  existe:Boolean=false;
 
   constructor(private router:Router,private fb: FormBuilder,private ds:DueñoServicio
     ) { }
@@ -51,7 +52,9 @@ export class EditarDuenioComponent implements OnInit {
     d.password=form.password;
     d.telefono=form.telefono;
     this.ds.editarDuenio(d,this.duenio['idDuenio']).subscribe(respuesta=>{this.ds.setDueño(respuesta), this.duenio=this.ds.getDueño()
-      ,this.nombre=this.duenio["nombre"],this.router.navigate(['duenio'])});
+      ,this.nombre=this.duenio["nombre"],this.router.navigate(['duenio'])},
+      
+      error =>{this.existe=true;});
   }
 
 }

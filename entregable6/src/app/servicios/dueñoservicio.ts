@@ -23,7 +23,7 @@ export class DueñoServicio {
         due.email=email;
         due.password=password;
         let json = JSON.stringify(due);
-        let headers= new HttpHeaders().set('Content-Type','application/json')
+        let headers= new HttpHeaders().set('Content-Type','application/json').set('Access-Control-Allow-Origin','*');
         return this.http.post<Boolean>(this.dueñoUrl,json,{headers:headers});
              
      }
@@ -67,19 +67,21 @@ export class DueñoServicio {
      agregarDuenio(duenio){
         var url='http://localhost:1085/ttps-spring/registrar/duenio'
         let json = JSON.stringify(duenio);
-        let headers= new HttpHeaders().set('Content-Type','application/json').set('token',this.getToke());
+        let headers= new HttpHeaders().set('Content-Type','application/json').set('Access-Control-Allow-Origin','*');
         return this.http.post<Boolean>(url,json,{headers:headers});
 
      }
 
      traerDuenio(id){
+        let headers= new HttpHeaders().set('Content-Type','application/json').set('Access-Control-Allow-Origin','*');
+
         return this.http.get<Dueño>("http://localhost:1085/ttps-spring/duenio/"+id);
      }
 
      editarDuenio(duenio,id){
         var url='http://localhost:1085/ttps-spring/editar/duenio/'
         let json = JSON.stringify(duenio);
-        let headers= new HttpHeaders().set('Content-Type','application/json').set('token',this.getToke());
+        let headers= new HttpHeaders().set('Content-Type','application/json').set('Access-Control-Allow-Origin','*').set('token',this.getToke());
         return this.http.put<Boolean>(url+id,json,{headers:headers});
 
      }
