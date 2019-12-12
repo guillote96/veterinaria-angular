@@ -50,14 +50,14 @@ export class VeterinarioServicio {
      agregarVeterinario(veterinario){
         var url='http://localhost:1085/ttps-spring/registrar/veterinario'
         let json = JSON.stringify(veterinario);
-        let headers= new HttpHeaders().set('Content-Type','application/json')
+        let headers= new HttpHeaders().set('Content-Type','application/json').set('token',this.getToke());
         return this.http.post<Boolean>(url,json,{headers:headers});
 
      }
      editarVeterinario(veterinario,id){
         var url='http://localhost:1085/ttps-spring/editar/veterinario/'
         let json = JSON.stringify(veterinario);
-        let headers= new HttpHeaders().set('Content-Type','application/json')
+        let headers= new HttpHeaders().set('Content-Type','application/json').set('token',this.getToke());
         return this.http.put<Boolean>(url+id,json,{headers:headers});
 
      }
